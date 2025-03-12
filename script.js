@@ -44,7 +44,7 @@ const locations = [
     name: "town square",
     "button text": ["Go to store", "Go to cave", "Fight dragon"],
     "button functions": [goStore, goCave, fightDragon],
-    text: "You are in the town square. You see a sign that says \"Store\"."
+    text: "You are in the town square. You see a sign that says \"Store\"." 
   },
   {
     name: "store",
@@ -274,13 +274,17 @@ function pick(guess) {
     text.innerText += numbers[i] + "\n";
   }
   if (numbers.includes(guess)) {
-    text.innerText += "Right! You win 20 gold!";
+    update(locations[0]);
+    text.innerText = "Right! You win 20 gold!"; 
     gold += 20;
     goldText.innerText = gold;
+
   } else {
-    text.innerText += "Wrong! You lose 10 health!";
+    update(locations[0]);
+    text.innerText = "Wrong! You lose 10 health!";
     health -= 10;
     healthText.innerText = health;
+
     if (health <= 0) {
       lose();
     }
